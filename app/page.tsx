@@ -1,3 +1,9 @@
+import HeaderSection from "./HeaderSection";
+
 export default function Home() {
-  return <div>This is home page</div>;
+  return (
+    <div>
+      <HeaderSection />
+    </div>
+  );
 }
