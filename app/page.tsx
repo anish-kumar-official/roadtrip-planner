@@ -1,3 +1,4 @@
+"use client";
 import HeaderSection from "./HeaderSection";
 import LandingPage from "./landingPage";
 

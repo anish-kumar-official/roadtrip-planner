@@ -7,7 +7,7 @@ const LandingPage = () => {
   return (
     <div className="gap-4 absolute inset-0">
       <LpBackground />
-      {/* <MapPage /> */}
+      <MapPage />
     </div>
   );
 };

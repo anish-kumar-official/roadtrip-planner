@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { CircleChevronLeft } from "lucide-react";
 import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { CircleChevronRight } from "lucide-react";
+import ItenaryDialog from "./components/itenaryDialog";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 
 const travelDestinations = [
   {
@@ -113,10 +114,9 @@ const roadTrip = [
 const LpBackground = () => {
   const [currImageIndex, setCurrImageIndex] = useState(0);
   const [autoplay, setAutoplay] = useState(false);
+  const [showForm, setShowForm] = useState(false);
 
   const currImage = travelDestinations[currImageIndex];
-
-  const handleClick = () => {};
 
   const nextImage = () => {
     setCurrImageIndex((prev) =>
@@ -163,13 +163,17 @@ const LpBackground = () => {
       </div>
       <div className="absolute bottom-24 left-1/2 -translate-x-1/2 flex items-center justify-center p-4 z-10 gap-2">
         <div className="w-[400px] flex gap-2">
-          <Button
-            className="cursor-pointer bg-white/70 w-full"
-            variant="outline"
-            onClick={handleClick()}
-          >
-            <Search size={36} strokeWidth={1} /> Create a New itenary
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                className="cursor-pointer bg-white/70 w-full"
+                variant="outline"
+              >
+                <Search size={36} strokeWidth={1} /> Create a New Itenary
+              </Button>
+            </DialogTrigger>
+            <ItenaryDialog />
+          </Dialog>
         </div>
       </div>
     </div>
